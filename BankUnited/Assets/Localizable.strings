@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Pods
+  
+*/
+
+// BankUnited
+
+// MARK: - Landing
+WELCOME_TITLE = "Welcome to the BankUnitedLanding page";
+WELCOME_SUBTITLE = "Please tap anywhere to begin";
+NEXT = "Next";
+BIG_UNDERSTOOD = "UNDERSTOOD";
+
+FINISHED = "Finished";
+OK = "OK";
