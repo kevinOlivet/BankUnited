@@ -23,13 +23,13 @@ class BankUnitedLandingRouter: NSObject, BankUnitedLandingRoutingLogic, BankUnit
     // MARK: Routing
 
     func routeToEmployeesList() {
-//        let storyboard = UIStoryboard(
-//            name: "EmployeesMain",
-//            bundle: Utils.bundle(forClass: EmployeesListViewController.classForCoder())
-//        )
-//        let destinationNVC = storyboard.instantiateInitialViewController() as! UINavigationController
-//        destinationNVC.modalPresentationStyle = .fullScreen
-//        navigateToEmployeesList(source: viewController!, destination: destinationNVC)
+        let storyboard = UIStoryboard(
+            name: "EmployeesMain",
+            bundle: Utils.bundle(forClass: EmployeesListViewController.classForCoder())
+        )
+        let destinationNVC = storyboard.instantiateInitialViewController() as! UINavigationController
+        destinationNVC.modalPresentationStyle = .fullScreen
+        navigateToEmployeesList(source: viewController!, destination: destinationNVC)
     }
 
     // MARK: Navigation

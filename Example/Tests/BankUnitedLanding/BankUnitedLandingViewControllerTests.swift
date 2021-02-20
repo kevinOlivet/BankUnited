@@ -5,12 +5,6 @@
 //  Copyright Jon Kevin Olivet
 //
 
-// swiftlint:disable superfluous_disable_command
-// swiftlint:disable file_length
-// swiftlint:disable force_cast
-// swiftlint:disable identifier_name
-// swiftlint:disable implicitly_unwrapped_optional
-// swiftlint:disable line_length
 @testable import BankUnited
 import XCTest
 
@@ -118,10 +112,3 @@ class BankUnitedLandingViewControllerTests: XCTestCase {
         )
     }
 }
-
-// swiftlint:enable line_length
-// swiftlint:enable implicitly_unwrapped_optional
-// swiftlint:enable identifier_name
-// swiftlint:enable force_cast
-// swiftlint:enable file_length
-// swiftlint:enable superfluous_disable_command

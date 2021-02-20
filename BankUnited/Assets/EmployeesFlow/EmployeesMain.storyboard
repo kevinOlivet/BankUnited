@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +19,79 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fv5-6b-gMw" kind="relationship" relationship="rootViewController" id="SLE-WW-C1Y"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llh-l0-lPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1282" y="113"/>
         </scene>
+        <!--Employees List View Controller-->
+        <scene sceneID="Ls4-fJ-TrI">
+            <objects>
+                <viewController storyboardIdentifier="EmployeesListViewController" id="Fv5-6b-gMw" customClass="EmployeesListViewController" customModule="BankUnited" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BhJ-pl-iPD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1B6-i5-dwM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="707"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fv5-6b-gMw" id="fmy-Aj-MG7"/>
+                                    <outlet property="delegate" destination="Fv5-6b-gMw" id="n8S-hA-gdr"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlD-KV-5J3">
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy3-QR-pnj">
+                                        <rect key="frame" x="50" y="20" width="314" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kwg-wr-omI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Fy3-QR-pnj" firstAttribute="top" secondItem="PlD-KV-5J3" secondAttribute="top" constant="20" id="4FZ-6I-gnZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fy3-QR-pnj" secondAttribute="trailing" constant="50" id="Ms8-UB-ohu"/>
+                                    <constraint firstAttribute="height" constant="100" id="TJi-Op-5nq"/>
+                                    <constraint firstItem="Fy3-QR-pnj" firstAttribute="leading" secondItem="PlD-KV-5J3" secondAttribute="leading" constant="50" id="wiA-4C-ngj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fy3-QR-pnj" secondAttribute="bottom" constant="30" id="yKe-rF-3yD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tWG-AB-gBx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PlD-KV-5J3" firstAttribute="trailing" secondItem="tWG-AB-gBx" secondAttribute="trailing" id="8QE-LK-4lu"/>
+                            <constraint firstItem="PlD-KV-5J3" firstAttribute="leading" secondItem="tWG-AB-gBx" secondAttribute="leading" id="CFE-jR-Cxa"/>
+                            <constraint firstItem="PlD-KV-5J3" firstAttribute="top" secondItem="1B6-i5-dwM" secondAttribute="bottom" constant="1" id="Eby-LD-sW2"/>
+                            <constraint firstItem="1B6-i5-dwM" firstAttribute="top" secondItem="tWG-AB-gBx" secondAttribute="top" id="OXJ-Kx-ddh"/>
+                            <constraint firstItem="1B6-i5-dwM" firstAttribute="leading" secondItem="tWG-AB-gBx" secondAttribute="leading" id="Qxz-ry-z3T"/>
+                            <constraint firstAttribute="bottom" secondItem="PlD-KV-5J3" secondAttribute="bottom" id="UU7-Ad-fxW"/>
+                            <constraint firstItem="1B6-i5-dwM" firstAttribute="trailing" secondItem="tWG-AB-gBx" secondAttribute="trailing" id="g2o-oN-JJe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ATn-Dq-YYl"/>
+                    <connections>
+                        <outlet property="createEmployeeButton" destination="Fy3-QR-pnj" id="vb8-re-MRu"/>
+                        <outlet property="tableView" destination="1B6-i5-dwM" id="Och-ZJ-UqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdP-0H-OjS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047.826086956522" y="112.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

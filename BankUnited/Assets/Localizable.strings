@@ -14,3 +14,10 @@ BIG_UNDERSTOOD = "UNDERSTOOD";
 
 FINISHED = "Finished";
 OK = "OK";
+
+// MARK: - EmployeesList
+NAME = "Name";
+SALARY = "Salary";
+CURRENCY_SIGN = "$ ";
+AGE = "Age";
+CREATE_NEW_EMPLOYEEE = "Create New Employee";

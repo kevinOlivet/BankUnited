@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
 
-        let viewController = BankUnitedFactory().getExampleRootViewController()
+        let viewController = BankUnitedFactory().getRootViewController()
         window?.rootViewController = viewController
         return true
     }

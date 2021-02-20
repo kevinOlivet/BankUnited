@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		081F8ADC25DFF6C8009830AD /* BankUnited.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 081F8ADB25DFF6C8009830AD /* BankUnited.podspec */; };
+		08DF9FD525E0677D0029431A /* EmployeesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCD25E0677D0029431A /* EmployeesListViewControllerTests.swift */; };
+		08DF9FD625E0677D0029431A /* EmployeesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCE25E0677D0029431A /* EmployeesListInteractorTests.swift */; };
+		08DF9FD725E0677D0029431A /* EmployeesListDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCF25E0677D0029431A /* EmployeesListDisplayLogicSpy.swift */; };
+		08DF9FD825E0677D0029431A /* EmployeesListWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD025E0677D0029431A /* EmployeesListWorkerTests.swift */; };
+		08DF9FD925E0677D0029431A /* EmployeesListPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD125E0677D0029431A /* EmployeesListPresentationLogicSpy.swift */; };
+		08DF9FDA25E0677D0029431A /* EmployeesListRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD225E0677D0029431A /* EmployeesListRoutingLogicSpy.swift */; };
+		08DF9FDB25E0677D0029431A /* EmployeesListBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD325E0677D0029431A /* EmployeesListBusinessLogicSpy.swift */; };
+		08DF9FDC25E0677D0029431A /* EmployeesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD425E0677D0029431A /* EmployeesListPresenterTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -37,6 +45,14 @@
 
 /* Begin PBXFileReference section */
 		081F8ADB25DFF6C8009830AD /* BankUnited.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BankUnited.podspec; path = ../BankUnited.podspec; sourceTree = "<group>"; };
+		08DF9FCD25E0677D0029431A /* EmployeesListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewControllerTests.swift; sourceTree = "<group>"; };
+		08DF9FCE25E0677D0029431A /* EmployeesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListInteractorTests.swift; sourceTree = "<group>"; };
+		08DF9FCF25E0677D0029431A /* EmployeesListDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		08DF9FD025E0677D0029431A /* EmployeesListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListWorkerTests.swift; sourceTree = "<group>"; };
+		08DF9FD125E0677D0029431A /* EmployeesListPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListPresentationLogicSpy.swift; sourceTree = "<group>"; };
+		08DF9FD225E0677D0029431A /* EmployeesListRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		08DF9FD325E0677D0029431A /* EmployeesListBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		08DF9FD425E0677D0029431A /* EmployeesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListPresenterTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BankUnited_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankUnited_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +94,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08DF9FEC25E0678F0029431A /* EmployeesList */ = {
+			isa = PBXGroup;
+			children = (
+				08DF9FF125E067A90029431A /* Spies */,
+				08DF9FCD25E0677D0029431A /* EmployeesListViewControllerTests.swift */,
+				08DF9FCE25E0677D0029431A /* EmployeesListInteractorTests.swift */,
+				08DF9FD025E0677D0029431A /* EmployeesListWorkerTests.swift */,
+				08DF9FD425E0677D0029431A /* EmployeesListPresenterTests.swift */,
+			);
+			path = EmployeesList;
+			sourceTree = "<group>";
+		};
+		08DF9FF125E067A90029431A /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				08DF9FCF25E0677D0029431A /* EmployeesListDisplayLogicSpy.swift */,
+				08DF9FD125E0677D0029431A /* EmployeesListPresentationLogicSpy.swift */,
+				08DF9FD225E0677D0029431A /* EmployeesListRoutingLogicSpy.swift */,
+				08DF9FD325E0677D0029431A /* EmployeesListBusinessLogicSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +166,7 @@
 				8E10B33F2443DE13007EFC3C /* BankUnitedCommons */,
 				8EA1175824436056008A80F6 /* BankUnitedLanding */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				08DF9FEC25E0678F0029431A /* EmployeesList */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -304,15 +344,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DF9FD725E0677D0029431A /* EmployeesListDisplayLogicSpy.swift in Sources */,
 				8EA1176824436056008A80F6 /* BankUnitedLandingViewControllerTests.swift in Sources */,
 				8EA1176424436056008A80F6 /* BankUnitedLandingPresentationLogicSpy.swift in Sources */,
 				8EA1176724436056008A80F6 /* BankUnitedLandingPresenterTests.swift in Sources */,
+				08DF9FD625E0677D0029431A /* EmployeesListInteractorTests.swift in Sources */,
 				8E10B3412443DE2D007EFC3C /* ReachabilitySpy.swift in Sources */,
 				8EA1176924436056008A80F6 /* BankUnitedLandingInteractorTests.swift in Sources */,
+				08DF9FDA25E0677D0029431A /* EmployeesListRoutingLogicSpy.swift in Sources */,
+				08DF9FD825E0677D0029431A /* EmployeesListWorkerTests.swift in Sources */,
 				8EA1176524436056008A80F6 /* BankUnitedLandingDisplayLogicSpy.swift in Sources */,
+				08DF9FD525E0677D0029431A /* EmployeesListViewControllerTests.swift in Sources */,
+				08DF9FDB25E0677D0029431A /* EmployeesListBusinessLogicSpy.swift in Sources */,
 				8EA1176324436056008A80F6 /* BankUnitedLandingBusinessLogicSpy.swift in Sources */,
 				8EA1176224436056008A80F6 /* BankUnitedLandingWorkerTests.swift in Sources */,
+				08DF9FDC25E0677D0029431A /* EmployeesListPresenterTests.swift in Sources */,
 				8EA1176624436056008A80F6 /* BankUnitedLandingRoutingLogicSpy.swift in Sources */,
+				08DF9FD925E0677D0029431A /* EmployeesListPresentationLogicSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
