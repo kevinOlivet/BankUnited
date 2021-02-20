@@ -10,6 +10,7 @@
 
 class EmployeesListDisplayLogicSpy: EmployeesListDisplayLogic {
 
+    // MARK: - Variables
     var displaySetupUICalled = false
     var displayLoadingViewCalled = false
     var hideLoadingViewCalled = false
@@ -19,9 +20,10 @@ class EmployeesListDisplayLogicSpy: EmployeesListDisplayLogic {
 
     var displaySetupUIViewModel: EmployeesList.Texts.ViewModel?
     var displayErrorAlertViewModel: EmployeesList.Failure.ViewModel?
-    var displayEmployeesArrayViewModel: EmployeesList.Employees.ViewModel?
+    var displayEmployeesArrayViewModel: EmployeesList.Base.ViewModel?
     var showEmployeeDetailViewModel: EmployeesList.EmployeeDetails.ViewModel?
 
+    // MARK: - Methods
     func displaySetupUI(viewModel: EmployeesList.Texts.ViewModel) {
         displaySetupUICalled = true
         displaySetupUIViewModel = viewModel
@@ -36,7 +38,7 @@ class EmployeesListDisplayLogicSpy: EmployeesListDisplayLogic {
         displayErrorAlertCalled = true
         displayErrorAlertViewModel = viewModel
     }
-    func displayEmployeesArray(viewModel: EmployeesList.Employees.ViewModel) {
+    func displayEmployeesArray(viewModel: EmployeesList.Base.ViewModel) {
         displayEmployeesArrayCalled = true
         displayEmployeesArrayViewModel = viewModel
     }

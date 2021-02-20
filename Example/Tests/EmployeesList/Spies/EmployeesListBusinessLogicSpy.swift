@@ -15,14 +15,14 @@ class EmployeesListBusinessLogicSpy: EmployeesListBusinessLogic {
     var handleDidSelectRowCalled = false
 
     var prepareSetUpUIRequest: EmployeesList.Texts.Request?
-    var fetchEmployeesListRequest: EmployeesList.Employees.Request?
+    var fetchEmployeesListRequest: EmployeesList.Base.Request?
     var handleDidSelectRowRequest: EmployeesList.EmployeeDetails.Request?
 
     func prepareSetUpUI(request: EmployeesList.Texts.Request) {
         prepareSetUpUICalled = true
         prepareSetUpUIRequest = request
     }
-    func fetchEmployeesList(request: EmployeesList.Employees.Request) {
+    func fetchEmployeesList(request: EmployeesList.Base.Request) {
         fetchEmployeesListCalled = true
         fetchEmployeesListRequest = request
     }

@@ -11,7 +11,7 @@ protocol EmployeesListPresentationLogic {
     func presentLoadingView()
     func hideLoadingView()
     func presentErrorAlert(response: EmployeesList.Failure.Response)
-    func presentEmployeesList(response: EmployeesList.Employees.Response)
+    func presentEmployeesList(response: EmployeesList.Base.Response)
     func presentEmployeeDetail(response: EmployeesList.EmployeeDetails.Response)
 }
 
@@ -36,10 +36,10 @@ class EmployeesListPresenter: EmployeesListPresentationLogic {
         let viewModel = EmployeesList.Failure.ViewModel(errorType: response.errorType)
         viewController?.displayErrorAlert(viewModel: viewModel)
     }
-    func presentEmployeesList(response: EmployeesList.Employees.Response) {
-        var employeeArray = [EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess]()
+    func presentEmployeesList(response: EmployeesList.Base.Response) {
+        var employeeArray = [EmployeesList.Base.ViewModel.DisplayEmployeesSuccess]()
         for employee in response.employeesArray {
-            let viewModel = EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess(
+            let viewModel = EmployeesList.Base.ViewModel.DisplayEmployeesSuccess(
                 nameTitle: "NAME".localized,
                 name: employee.employeeName,
                 salaryTitle: "SALARY".localized,
@@ -49,7 +49,7 @@ class EmployeesListPresenter: EmployeesListPresentationLogic {
             )
             employeeArray.append(viewModel)
         }
-        let viewModel = EmployeesList.Employees.ViewModel(displayEmployeesArray: employeeArray)
+        let viewModel = EmployeesList.Base.ViewModel(displayEmployeesArray: employeeArray)
         viewController?.displayEmployeesArray(viewModel: viewModel)
     }
     func presentEmployeeDetail(response: EmployeesList.EmployeeDetails.Response) {

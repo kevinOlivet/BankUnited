@@ -8,7 +8,7 @@ import Foundation
 
 protocol EmployeesListBusinessLogic {
     func prepareSetUpUI(request: EmployeesList.Texts.Request)
-    func fetchEmployeesList(request: EmployeesList.Employees.Request)
+    func fetchEmployeesList(request: EmployeesList.Base.Request)
     func handleDidSelectRow(request: EmployeesList.EmployeeDetails.Request)
 }
 
@@ -31,13 +31,13 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
         presenter?.presentSetupUI(response: response)
     }
 
-    func fetchEmployeesList(request: EmployeesList.Employees.Request) {
+    func fetchEmployeesList(request: EmployeesList.Base.Request) {
         presenter?.presentLoadingView()
 
         worker?.getEmployeesList(successCompletion: { (receivedEmployees) in
             self.presenter?.hideLoadingView()
             if let receivedEmployees = receivedEmployees {
-                let response = EmployeesList.Employees.Response(employeesArray: receivedEmployees.data)
+                let response = EmployeesList.Base.Response(employeesArray: receivedEmployees.data)
                 self.presenter?.presentEmployeesList(response: response)
             } else {
                 let response = EmployeesList.Failure.Response(errorType: .service)

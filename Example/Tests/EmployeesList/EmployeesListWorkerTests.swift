@@ -36,7 +36,6 @@ class EmployeesListWorkerTests: XCTestCase {
     }
 
     // MARK: Tests
-
     func testGetEmployeesListSuccess() {
         // Given
         stubs.registerStub(
@@ -75,7 +74,7 @@ class EmployeesListWorkerTests: XCTestCase {
         }) { _ in
         }
         self.waitForExpectations(timeout: 5.0, handler: nil)
-        stubs.removeStub(stubName: "Payment methods Stub")
+        stubs.removeStub(stubName: "Employees list stub")
         OHHTTPStubs.removeAllStubs()
     }
 
@@ -102,7 +101,7 @@ class EmployeesListWorkerTests: XCTestCase {
             expectation.fulfill()
         }
         self.waitForExpectations(timeout: 5.0, handler: nil)
-        stubs.removeStub(stubName: "Payment methods Stub (general error)")
+        stubs.removeStub(stubName: "Employees list Stub (general error)")
         OHHTTPStubs.removeAllStubs()
     }
 

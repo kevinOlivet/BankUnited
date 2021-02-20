@@ -15,7 +15,7 @@ class EmployeeTableViewCell: UITableViewCell {
     @IBOutlet private weak var ageTitleLabel: UILabel!
     @IBOutlet private weak var ageDisplayLabel: UILabel!
 
-    var objectVM: EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess? {
+    var objectVM: EmployeesList.Base.ViewModel.DisplayEmployeesSuccess? {
         didSet {
             nameTitleLabel.text = objectVM?.nameTitle
             nameDisplayLabel.text = objectVM?.name

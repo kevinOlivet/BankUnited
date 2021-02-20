@@ -10,6 +10,7 @@
 
 class EmployeesListPresentationLogicSpy: EmployeesListPresentationLogic {
 
+    // MARK: - Variables
     var presentSetupUICalled = false
     var presentLoadingViewCalled = false
     var hideLoadingViewCalled = false
@@ -19,9 +20,10 @@ class EmployeesListPresentationLogicSpy: EmployeesListPresentationLogic {
 
     var presentSetupUIResponse: EmployeesList.Texts.Response?
     var presentErrorAlertResponse: EmployeesList.Failure.Response?
-    var presentEmployeesListResponse: EmployeesList.Employees.Response?
+    var presentEmployeesListResponse: EmployeesList.Base.Response?
     var presentEmployeeDetailResponse: EmployeesList.EmployeeDetails.Response?
 
+    // MARK: - Methods
     func presentSetupUI(response: EmployeesList.Texts.Response) {
         presentSetupUICalled = true
         presentSetupUIResponse = response
@@ -36,7 +38,7 @@ class EmployeesListPresentationLogicSpy: EmployeesListPresentationLogic {
         presentErrorAlertCalled = true
         presentErrorAlertResponse = response
     }
-    func presentEmployeesList(response: EmployeesList.Employees.Response) {
+    func presentEmployeesList(response: EmployeesList.Base.Response) {
         presentEmployeesListCalled = true
         presentEmployeesListResponse = response
     }

@@ -12,15 +12,16 @@ protocol EmployeesListDisplayLogic: AnyObject {
     func displayLoadingView()
     func hideLoadingView()
     func displayErrorAlert(viewModel: EmployeesList.Failure.ViewModel)
-    func displayEmployeesArray(viewModel: EmployeesList.Employees.ViewModel)
-    func showEmployeeDetail(viewModel: EmployeesList.EmployeeDetails.ViewModel)}
+    func displayEmployeesArray(viewModel: EmployeesList.Base.ViewModel)
+    func showEmployeeDetail(viewModel: EmployeesList.EmployeeDetails.ViewModel)
+}
 
 class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic, UITableViewDataSource, UITableViewDelegate {
 
     var interactor: EmployeesListBusinessLogic?
     var router: (NSObjectProtocol & EmployeesListRoutingLogic & EmployeesListDataPassing)?
 
-    var employeesToDisplay = [EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess]()
+    var employeesToDisplay = [EmployeesList.Base.ViewModel.DisplayEmployeesSuccess]()
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var createEmployeeButton: UIButton!
@@ -57,7 +58,7 @@ class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic
     @objc
     func fetchEmployeesList() {
         genericHideErrorView()
-        interactor?.fetchEmployeesList(request: EmployeesList.Employees.Request())
+        interactor?.fetchEmployeesList(request: EmployeesList.Base.Request())
     }
     func displaySetupUI(viewModel: EmployeesList.Texts.ViewModel) {
         self.title = viewModel.title
@@ -88,7 +89,7 @@ class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic
             closeAction: #selector(closeButtonTapped)
         )
     }
-    func displayEmployeesArray(viewModel: EmployeesList.Employees.ViewModel) {
+    func displayEmployeesArray(viewModel: EmployeesList.Base.ViewModel) {
         employeesToDisplay = viewModel.displayEmployeesArray
         tableView.reloadData()
     }

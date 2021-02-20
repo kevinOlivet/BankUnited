@@ -21,7 +21,7 @@ enum EmployeesList {
         }
     }
 
-    enum Employees {
+    enum Base {
       struct Request {}
       struct Response {
         let employeesArray: [EmployeesModel.Datum]
@@ -55,7 +55,6 @@ enum EmployeesList {
         }
         struct Response {}
         struct ViewModel {}
-
     }
     
 }

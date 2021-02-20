@@ -10,18 +10,16 @@
 import XCTest
 
 class EmployeesListPresenterTests: XCTestCase {
-    // MARK: Subject under test
 
+    // MARK: Subject under test
     var sut: EmployeesListPresenter!
     var spyViewController: EmployeesListDisplayLogicSpy!
 
     // MARK: Test lifecycle
-
     override  func setUp() {
         super.setUp()
         setupEmployeesListPresenter()
     }
-
     override  func tearDown() {
         spyViewController = nil
         sut = nil
@@ -29,7 +27,6 @@ class EmployeesListPresenterTests: XCTestCase {
     }
 
     // MARK: Test setup
-
     func setupEmployeesListPresenter() {
         sut = EmployeesListPresenter()
 
@@ -106,7 +103,7 @@ class EmployeesListPresenterTests: XCTestCase {
             employeeAge: "testemployeeAge",
             profileImage: "testprofileImage"
         )
-        let response = EmployeesList.Employees.Response(employeesArray: [data])
+        let response = EmployeesList.Base.Response(employeesArray: [data])
         // When
         sut.presentEmployeesList(response: response)
         // Then

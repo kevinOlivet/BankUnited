@@ -11,12 +11,14 @@ import Foundation
 
 class EmployeesListRoutingLogicSpy: NSObject, EmployeesListRoutingLogic, EmployeesListDataPassing {
 
+    // MARK: - Variables
     var dataStore: EmployeesListDataStore?
 
     var closeToDashboardCalled = false
     var routeToEmployeeDetailCalled = false
     var routeToCreateNewEmployeeCalled = false
 
+    // MARK: - Methods
     func closeToDashboard() {
         closeToDashboardCalled = true
     }

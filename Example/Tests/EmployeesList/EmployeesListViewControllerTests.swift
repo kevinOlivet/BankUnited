@@ -12,6 +12,7 @@ import BasicUIElements
 import XCTest
 
 class EmployeesListViewControllerTests: XCTestCase {
+
     // MARK: Subject under test
     var sut: EmployeesListViewController!
     var spyInteractor: EmployeesListBusinessLogicSpy!
@@ -19,13 +20,11 @@ class EmployeesListViewControllerTests: XCTestCase {
     var window: UIWindow!
 
     // MARK: Test lifecycle
-
     override  func setUp() {
         super.setUp()
         window = UIWindow()
         setupEmployeesListViewController()
     }
-
     override  func tearDown() {
         spyInteractor = nil
         spyRouter = nil
@@ -35,7 +34,6 @@ class EmployeesListViewControllerTests: XCTestCase {
     }
 
     // MARK: Test setup
-
     func setupEmployeesListViewController() {
         let bundle = Utils.bundle(forClass: EmployeesListViewController.classForCoder())!
         let storyboard = UIStoryboard(name: "EmployeesMain", bundle: bundle)
@@ -126,7 +124,7 @@ class EmployeesListViewControllerTests: XCTestCase {
     }
     func testDisplayEmployeesArray() {
         // Given
-        let data = EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess(
+        let data = EmployeesList.Base.ViewModel.DisplayEmployeesSuccess(
             nameTitle: "testnameTitle",
             name: "testname",
             salaryTitle: "testsalaryTitle",
@@ -134,7 +132,7 @@ class EmployeesListViewControllerTests: XCTestCase {
             ageTitle: "testageTitle",
             age: "testage"
         )
-        let viewModel = EmployeesList.Employees.ViewModel(displayEmployeesArray: [data])
+        let viewModel = EmployeesList.Base.ViewModel(displayEmployeesArray: [data])
         // When
         sut.displayEmployeesArray(viewModel: viewModel)
         // Then
@@ -165,7 +163,7 @@ class EmployeesListViewControllerTests: XCTestCase {
     }
     func testCellForRow() {
         // Given
-        let data = EmployeesList.Employees.ViewModel.DisplayEmployeesSuccess(
+        let data = EmployeesList.Base.ViewModel.DisplayEmployeesSuccess(
             nameTitle: "testnameTitle",
             name: "testname",
             salaryTitle: "testsalaryTitle",
@@ -173,14 +171,14 @@ class EmployeesListViewControllerTests: XCTestCase {
             ageTitle: "testageTitle",
             age: "testage"
         )
-        let viewModel = EmployeesList.Employees.ViewModel(displayEmployeesArray: [data])
+        let viewModel = EmployeesList.Base.ViewModel(displayEmployeesArray: [data])
 
         sut.employeesToDisplay = viewModel.displayEmployeesArray
         sut.getTableView.reloadData()
         let indexPathToUse = IndexPath(row: 0, section: 0)
         // When
         let cell = sut.tableView(sut.getTableView, cellForRowAt: indexPathToUse)
-        XCTAssertTrue(cell is EmployeeTableViewCell, "cell should be PaymentMethodTableViewCell")
+        XCTAssertTrue(cell is EmployeeTableViewCell, "cell should be EmployeeTableViewCell")
         guard let employeeCell = cell as? EmployeeTableViewCell else {
             XCTFail("cell is not EmployeeTableViewCell")
             return

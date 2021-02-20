@@ -93,7 +93,7 @@ class EmployeesListInteractorTests: XCTestCase {
     func testFetchEmployeesListSuccess() {
         // Given
         spyWorker.theResult = .success
-        let request = EmployeesList.Employees.Request()
+        let request = EmployeesList.Base.Request()
         // When
         sut.fetchEmployeesList(request: request)
         // Then
@@ -102,7 +102,7 @@ class EmployeesListInteractorTests: XCTestCase {
     func testFetchEmployeesListParsingFail() {
         // Given
         spyWorker.theResult = .parsingFail
-        let request = EmployeesList.Employees.Request()
+        let request = EmployeesList.Base.Request()
         // When
         sut.fetchEmployeesList(request: request)
         // Then
@@ -119,7 +119,7 @@ class EmployeesListInteractorTests: XCTestCase {
     func testFetchEmployeesListGeneralFail() {
         // Given
         spyWorker.theResult = .failure
-        let request = EmployeesList.Employees.Request()
+        let request = EmployeesList.Base.Request()
         // When
         sut.fetchEmployeesList(request: request)
         // Then
