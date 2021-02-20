@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		081F8ADC25DFF6C8009830AD /* BankUnited.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 081F8ADB25DFF6C8009830AD /* BankUnited.podspec */; };
+		08CC118125E178B300670567 /* EmployeeDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117925E178B300670567 /* EmployeeDetailViewControllerTests.swift */; };
+		08CC118225E178B300670567 /* EmployeeDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117A25E178B300670567 /* EmployeeDetailInteractorTests.swift */; };
+		08CC118325E178B300670567 /* EmployeeDetailDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117B25E178B300670567 /* EmployeeDetailDisplayLogicSpy.swift */; };
+		08CC118425E178B300670567 /* EmployeeDetailWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117C25E178B300670567 /* EmployeeDetailWorkerTests.swift */; };
+		08CC118525E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117D25E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift */; };
+		08CC118625E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117E25E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift */; };
+		08CC118725E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC117F25E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift */; };
+		08CC118825E178B300670567 /* EmployeeDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC118025E178B300670567 /* EmployeeDetailPresenterTests.swift */; };
 		08DF9FD525E0677D0029431A /* EmployeesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCD25E0677D0029431A /* EmployeesListViewControllerTests.swift */; };
 		08DF9FD625E0677D0029431A /* EmployeesListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCE25E0677D0029431A /* EmployeesListInteractorTests.swift */; };
 		08DF9FD725E0677D0029431A /* EmployeesListDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FCF25E0677D0029431A /* EmployeesListDisplayLogicSpy.swift */; };
@@ -45,6 +53,14 @@
 
 /* Begin PBXFileReference section */
 		081F8ADB25DFF6C8009830AD /* BankUnited.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BankUnited.podspec; path = ../BankUnited.podspec; sourceTree = "<group>"; };
+		08CC117925E178B300670567 /* EmployeeDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		08CC117A25E178B300670567 /* EmployeeDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailInteractorTests.swift; sourceTree = "<group>"; };
+		08CC117B25E178B300670567 /* EmployeeDetailDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		08CC117C25E178B300670567 /* EmployeeDetailWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailWorkerTests.swift; sourceTree = "<group>"; };
+		08CC117D25E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailPresentationLogicSpy.swift; sourceTree = "<group>"; };
+		08CC117E25E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		08CC117F25E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		08CC118025E178B300670567 /* EmployeeDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailPresenterTests.swift; sourceTree = "<group>"; };
 		08DF9FCD25E0677D0029431A /* EmployeesListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListViewControllerTests.swift; sourceTree = "<group>"; };
 		08DF9FCE25E0677D0029431A /* EmployeesListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListInteractorTests.swift; sourceTree = "<group>"; };
 		08DF9FCF25E0677D0029431A /* EmployeesListDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListDisplayLogicSpy.swift; sourceTree = "<group>"; };
@@ -94,6 +110,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08CC118B25E178CD00670567 /* EmployeeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				08CC118C25E178E100670567 /* Spies */,
+				08CC117925E178B300670567 /* EmployeeDetailViewControllerTests.swift */,
+				08CC117A25E178B300670567 /* EmployeeDetailInteractorTests.swift */,
+				08CC117C25E178B300670567 /* EmployeeDetailWorkerTests.swift */,
+				08CC118025E178B300670567 /* EmployeeDetailPresenterTests.swift */,
+			);
+			path = EmployeeDetail;
+			sourceTree = "<group>";
+		};
+		08CC118C25E178E100670567 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				08CC117B25E178B300670567 /* EmployeeDetailDisplayLogicSpy.swift */,
+				08CC117D25E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift */,
+				08CC117E25E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift */,
+				08CC117F25E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		08DF9FEC25E0678F0029431A /* EmployeesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +206,7 @@
 				8EA1175824436056008A80F6 /* BankUnitedLanding */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				08DF9FEC25E0678F0029431A /* EmployeesList */,
+				08CC118B25E178CD00670567 /* EmployeeDetail */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -344,22 +384,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08CC118725E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift in Sources */,
 				08DF9FD725E0677D0029431A /* EmployeesListDisplayLogicSpy.swift in Sources */,
 				8EA1176824436056008A80F6 /* BankUnitedLandingViewControllerTests.swift in Sources */,
+				08CC118225E178B300670567 /* EmployeeDetailInteractorTests.swift in Sources */,
 				8EA1176424436056008A80F6 /* BankUnitedLandingPresentationLogicSpy.swift in Sources */,
 				8EA1176724436056008A80F6 /* BankUnitedLandingPresenterTests.swift in Sources */,
 				08DF9FD625E0677D0029431A /* EmployeesListInteractorTests.swift in Sources */,
 				8E10B3412443DE2D007EFC3C /* ReachabilitySpy.swift in Sources */,
 				8EA1176924436056008A80F6 /* BankUnitedLandingInteractorTests.swift in Sources */,
+				08CC118125E178B300670567 /* EmployeeDetailViewControllerTests.swift in Sources */,
 				08DF9FDA25E0677D0029431A /* EmployeesListRoutingLogicSpy.swift in Sources */,
 				08DF9FD825E0677D0029431A /* EmployeesListWorkerTests.swift in Sources */,
 				8EA1176524436056008A80F6 /* BankUnitedLandingDisplayLogicSpy.swift in Sources */,
 				08DF9FD525E0677D0029431A /* EmployeesListViewControllerTests.swift in Sources */,
+				08CC118325E178B300670567 /* EmployeeDetailDisplayLogicSpy.swift in Sources */,
 				08DF9FDB25E0677D0029431A /* EmployeesListBusinessLogicSpy.swift in Sources */,
+				08CC118625E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift in Sources */,
 				8EA1176324436056008A80F6 /* BankUnitedLandingBusinessLogicSpy.swift in Sources */,
 				8EA1176224436056008A80F6 /* BankUnitedLandingWorkerTests.swift in Sources */,
 				08DF9FDC25E0677D0029431A /* EmployeesListPresenterTests.swift in Sources */,
+				08CC118525E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift in Sources */,
+				08CC118425E178B300670567 /* EmployeeDetailWorkerTests.swift in Sources */,
 				8EA1176624436056008A80F6 /* BankUnitedLandingRoutingLogicSpy.swift in Sources */,
+				08CC118825E178B300670567 /* EmployeeDetailPresenterTests.swift in Sources */,
 				08DF9FD925E0677D0029431A /* EmployeesListPresentationLogicSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

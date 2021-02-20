@@ -7,11 +7,11 @@
 // MARK: - EmployeeDetailModel
 struct EmployeeDetailModel: Codable {
     let status: String
-    let data: DataClass
+    let data: Datum
     let message: String
 
-    // MARK: - DataClass
-    struct DataClass: Codable {
+    // MARK: - Datum
+    struct Datum: Codable {
         let id: Int
         let employeeName: String
         let employeeSalary, employeeAge: Int

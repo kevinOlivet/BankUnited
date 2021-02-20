@@ -32,7 +32,7 @@ public class BankUnitedStubs: NSObject {
         )
 
         registerStub(
-            for: Configuration.Api.employeeDetail,
+            for: Configuration.Api.employeeDetail + "1",
             jsonFile: "GET_employee_details_200.json",
             stubName: "Employee detail"
         )

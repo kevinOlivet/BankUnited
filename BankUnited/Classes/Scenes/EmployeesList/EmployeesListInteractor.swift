@@ -13,13 +13,16 @@ protocol EmployeesListBusinessLogic {
 }
 
 protocol EmployeesListDataStore {
-    var selectedEmployeeId: Int! { get set }
+    var selectedEmployeeId: String! { get set }
+    var selectedEmployeeName: String! { get set }
 }
 
 class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStore {
     var presenter: EmployeesListPresentationLogic?
-    var worker: EmployeesListWorker? = EmployeesListWorker()
-    var selectedEmployeeId: Int!
+    var worker: EmployeesListWorker = EmployeesListWorker()
+    var foundEmployees = [EmployeesModel.Datum]()
+    var selectedEmployeeId: String!
+    var selectedEmployeeName: String!
 
     // MARK: Methods
 
@@ -34,14 +37,16 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
     func fetchEmployeesList(request: EmployeesList.Base.Request) {
         presenter?.presentLoadingView()
 
-        worker?.getEmployeesList(successCompletion: { (receivedEmployees) in
-            self.presenter?.hideLoadingView()
+        worker.getEmployeesList(successCompletion: { [weak self] (receivedEmployees) in
+            self?.presenter?.hideLoadingView()
             if let receivedEmployees = receivedEmployees {
+                self?.foundEmployees.removeAll()
+                self?.foundEmployees = receivedEmployees.data
                 let response = EmployeesList.Base.Response(employeesArray: receivedEmployees.data)
-                self.presenter?.presentEmployeesList(response: response)
+                self?.presenter?.presentEmployeesList(response: response)
             } else {
                 let response = EmployeesList.Failure.Response(errorType: .service)
-                self.presenter?.presentErrorAlert(response: response)
+                self?.presenter?.presentErrorAlert(response: response)
             }
 
         }) { (_) in
@@ -52,7 +57,8 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
     }
 
     func handleDidSelectRow(request: EmployeesList.EmployeeDetails.Request) {
-        selectedEmployeeId = request.indexPath
+        selectedEmployeeId = foundEmployees[request.indexPath].id
+        selectedEmployeeName = foundEmployees[request.indexPath].employeeName
         let response = EmployeesList.EmployeeDetails.Response()
         presenter?.presentEmployeeDetail(response: response)
     }

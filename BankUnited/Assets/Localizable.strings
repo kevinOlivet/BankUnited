@@ -21,3 +21,6 @@ SALARY = "Salary";
 CURRENCY_SIGN = "$ ";
 AGE = "Age";
 CREATE_NEW_EMPLOYEEE = "Create New Employee";
+
+// MARK: - EmployeeDetail
+GO_BACK = "Go Back";

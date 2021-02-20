@@ -1,27 +1,25 @@
 //
-//  EmployeesListWorkerTests.swift
+//  EmployeeDetailWorkerTests.swift
 //  BankUnited
 //
-//  Created on 19-02-21.
-//
 //
 
-@testable import BankUnited
 import BasicCommons
 import OHHTTPStubs
+@testable import BankUnited
 import XCTest
 
-class EmployeesListWorkerTests: XCTestCase {
+class EmployeeDetailWorkerTests: XCTestCase {
 
     // MARK: Subject under test
-    var sut: EmployeesListWorker!
+    var sut: EmployeeDetailWorker!
     var reachabilitySpy: ReachabilityCheckingProtocol?
     let stubs = BankUnitedStubs(logging: true, verbose: true)
 
     // MARK: Test lifecycle
-    override func setUp() {
+    override  func setUp() {
         super.setUp()
-        setupEmployeesListWorker()
+        setupEmployeeDetailWorker()
     }
     override  func tearDown() {
         sut = nil
@@ -29,61 +27,46 @@ class EmployeesListWorkerTests: XCTestCase {
     }
 
     // MARK: Test setup
-    func setupEmployeesListWorker() {
-        sut = EmployeesListWorker()
+    func setupEmployeeDetailWorker() {
+        sut = EmployeeDetailWorker()
         stubs.removeAllStubs()
         OHHTTPStubs.removeAllStubs()
     }
 
     // MARK: Tests
-    func testGetEmployeesListSuccess() {
+    func testGetDataSuccess() {
         // Given
         stubs.registerStub(
-            for: Configuration.Api.employeesList,
-            jsonFile: "GET_employees_list_200.json",
-            stubName: "Employees list stub",
+            for: Configuration.Api.employeeDetail + "1",
+            jsonFile: "GET_employee_details_200.json",
+            stubName: "Employees detail stub",
             downloadSpeed: OHHTTPStubsDownloadSpeedWifi,
             responseTime: 0
         )
 
         let expectation = self.expectation(description: "calls the callback with a resource object")
         // When
-        sut.getEmployeesList(successCompletion: { employeesResult in
+        sut.getData(selectedEmployeeId: "1", successCompletion: { dataResult in
             // Then
             XCTAssertEqual(
-                employeesResult?.data.first?.employeeName,
+                dataResult?.data.employeeName,
                 "Jon Olivet",
                 "should match the JSON file"
             )
-            XCTAssertEqual(
-                employeesResult?.data.first?.id,
-                "1",
-                "should match the JSON file"
-            )
-            XCTAssertEqual(
-                employeesResult?.data.first?.employeeAge,
-                "61",
-                "should match the JSON file"
-            )
-            XCTAssertEqual(
-                employeesResult?.data.first?.employeeSalary,
-                "320800",
-                "should match the JSON file"
-            )
             expectation.fulfill()
-        }) { _ in
+        }) { error, statusCode in
         }
         self.waitForExpectations(timeout: 5.0, handler: nil)
-        stubs.removeStub(stubName: "Employees list stub")
+        stubs.removeStub(stubName: "Employees detail stub")
         OHHTTPStubs.removeAllStubs()
     }
 
-    func testGetEmployeesListFail() {
+    func testGetDataFail() {
         // Given
         stubs.registerStub(
-            for: Configuration.Api.employeesList,
-            jsonFile: "GET_employees_list_200.json",
-            stubName: "Employees list Stub (general error)",
+            for: Configuration.Api.employeeDetail + "1",
+            jsonFile: "GET_employee_details_200.json",
+            stubName: "Employees details Stub (general error)",
             responseTime: 1,
             failWithInternetError: true
         )
@@ -91,8 +74,8 @@ class EmployeesListWorkerTests: XCTestCase {
         let expectation = self.expectation(description: "network down")
 
         // When
-        sut.getEmployeesList(successCompletion: { _ in
-        }) { error in
+        sut.getData(selectedEmployeeId: "1", successCompletion: { _ in
+        }) { error, statusCode in
             // Then
             XCTAssertNotNil(
                 error,
@@ -101,11 +84,11 @@ class EmployeesListWorkerTests: XCTestCase {
             expectation.fulfill()
         }
         self.waitForExpectations(timeout: 5.0, handler: nil)
-        stubs.removeStub(stubName: "Employees list Stub (general error)")
+        stubs.removeStub(stubName: "Employees details Stub (general error)")
         OHHTTPStubs.removeAllStubs()
     }
 
-    func testGetEmployeesListNoInternet() {
+    func testGetDataNoInternet() {
         // Given
         let reachabilitySpy = ReachabilitySpy()
         reachabilitySpy.isConnectedToNetworkReturnValue = false
@@ -114,8 +97,8 @@ class EmployeesListWorkerTests: XCTestCase {
         let expectation = self.expectation(description: "network is down!")
 
         // When
-        sut.getEmployeesList(successCompletion: { _ in
-        }) { error in
+        sut.getData(selectedEmployeeId: "1", successCompletion: { _ in
+        }) { error, statusCode in
             switch error {
             case NTError.noInternetConection:
                 expectation.fulfill()
@@ -128,4 +111,5 @@ class EmployeesListWorkerTests: XCTestCase {
         self.waitForExpectations(timeout: 5.0, handler: nil)
         OHHTTPStubs.removeAllStubs()
     }
+
 }

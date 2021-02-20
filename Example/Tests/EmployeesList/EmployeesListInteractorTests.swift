@@ -32,7 +32,15 @@ class EmployeesListInteractorTests: XCTestCase {
     // MARK: Test setup
     func setupEmployeesListInteractor() {
         sut = EmployeesListInteractor()
-
+        let item = EmployeesModel.Datum(
+            id: "1",
+            employeeName: "testemployeeName",
+            employeeSalary: "123",
+            employeeAge: "12",
+            profileImage: "testprofileImage"
+        )
+        sut.foundEmployees = [item]
+            
         spyPresenter = EmployeesListPresentationLogicSpy()
         sut.presenter = spyPresenter
 
@@ -135,7 +143,7 @@ class EmployeesListInteractorTests: XCTestCase {
     }
     func testHandleDidSelectRow() {
         // Given
-        sut.selectedEmployeeId = 1234
+        sut.selectedEmployeeId = "1"
         let request = EmployeesList.EmployeeDetails.Request(indexPath: 0)
         // When
         sut.handleDidSelectRow(request: request)

@@ -12,6 +12,11 @@ protocol APIBankUnitedProtocol {
     func getEmployees(success: @escaping (_ result: EmployeesModel, Int) -> Void,
                       failure: @escaping (_ error: NTError, Int) -> Void)
 
+    func getEmployeeDetails(selectedEmployeeId: String,
+                            success: @escaping (_ result: EmployeeDetailModel, Int) -> Void,
+                            failure: @escaping (_ error: NTError, Int) -> Void)
+
+    
 }
 
 class APIBankUnited: AuthenticatedAPI, APIBankUnitedProtocol {
