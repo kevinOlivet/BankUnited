@@ -48,12 +48,4 @@ enum EmployeeDetail {
       }
     }
 
-    enum BaseDetails {
-        struct Request {
-            let indexPath: Int
-        }
-        struct Response {}
-        struct ViewModel {}
-    }
-
 }

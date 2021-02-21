@@ -14,12 +14,10 @@ class EmployeeDetailPresentationLogicSpy: EmployeeDetailPresentationLogic {
     var hideLoadingViewCalled = false
     var presentErrorAlertCalled = false
     var presentDataCalled = false
-    var presentDataDetailCalled = false
 
     var presentSetupUIResponse: EmployeeDetail.Texts.Response?
     var presentErrorAlertResponse: EmployeeDetail.Failure.Response?
     var presentDataResponse: EmployeeDetail.Base.Response?
-    var presentDataDetailResponse: EmployeeDetail.BaseDetails.Response?
 
     // MARK: - Methods
     func presentSetupUI(response: EmployeeDetail.Texts.Response) {
@@ -39,10 +37,6 @@ class EmployeeDetailPresentationLogicSpy: EmployeeDetailPresentationLogic {
     func presentData(response: EmployeeDetail.Base.Response) {
         presentDataCalled = true
         presentDataResponse = response
-    }
-    func presentDataDetail(response: EmployeeDetail.BaseDetails.Response) {
-        presentDataDetailCalled = true
-        presentDataDetailResponse = response
     }
 
 }

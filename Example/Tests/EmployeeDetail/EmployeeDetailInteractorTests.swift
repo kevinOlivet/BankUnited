@@ -86,7 +86,7 @@ class EmployeeDetailInteractorTests: XCTestCase {
         sut.prepareSetUpUI(request: request)
         // Then
         XCTAssertTrue(spyPresenter.presentSetupUICalled)
-        XCTAssertEqual(spyPresenter.presentSetupUIResponse?.title,"Jon Olivet")
+        XCTAssertEqual(spyPresenter.presentSetupUIResponse?.title, "Jon Olivet")
         XCTAssertEqual(spyPresenter.presentSetupUIResponse?.buttonTitle, "GO_BACK")
     }
     func testFetchDataSuccess() {
@@ -97,6 +97,7 @@ class EmployeeDetailInteractorTests: XCTestCase {
         sut.fetchData(request: request)
         // Then
         XCTAssertTrue(spyPresenter.presentDataCalled)
+        XCTAssertEqual(spyPresenter.presentDataResponse?.data.employeeName, "testemployeeName")
     }
     func testFetchDataParsingFail() {
         // Given

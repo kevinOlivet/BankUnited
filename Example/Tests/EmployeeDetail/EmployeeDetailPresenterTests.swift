@@ -35,7 +35,7 @@ class EmployeeDetailPresenterTests: XCTestCase {
     // MARK: Tests
 
     func testPresentSetupUI() {
-       // Given
+        // Given
         let response = EmployeeDetail.Texts.Response(
             title: "testTitle",
             nameTitle: "testnameTitle",
@@ -43,36 +43,36 @@ class EmployeeDetailPresenterTests: XCTestCase {
             ageTitle: "testageTitle",
             buttonTitle: "testbuttonTitle"
         )
-       // When
-       sut.presentSetupUI(response: response)
-       // Then
-       XCTAssertTrue(spyViewController.displaySetupUICalled,"presentSetupUI should ask the view controller to display the result")
-       XCTAssertEqual(spyViewController.displaySetupUIViewModel?.title,"testTitle")
+        // When
+        sut.presentSetupUI(response: response)
+        // Then
+        XCTAssertTrue(spyViewController.displaySetupUICalled,"presentSetupUI should ask the view controller to display the result")
+        XCTAssertEqual(spyViewController.displaySetupUIViewModel?.title,"testTitle")
         XCTAssertEqual(spyViewController.displaySetupUIViewModel?.buttonTitle, "testbuttonTitle")
-   }
-   func testPresentLoadingView() {
-       // Given
-       // When
-       sut.presentLoadingView()
-       // Then
-       XCTAssertTrue(spyViewController.displayLoadingViewCalled, "presentLoadingView should ask the view controller to displayLoadingView")
-   }
-   func testHideLoadingView() {
-       // Given
-       // When
-       sut.hideLoadingView()
-       // Then
-       XCTAssertTrue(spyViewController.hideLoadingViewCalled, "hideLoadingView should ask the view controller to hideLoadingView")
-   }
-   func testPresentErrorAlert() {
-       // Given
-       let response = EmployeeDetail.Failure.Response(errorType: .internet)
-       // When
-       sut.presentErrorAlert(response: response)
-       // Then
-       XCTAssertTrue(spyViewController.displayErrorAlertCalled, "presentErrorAlert should ask the view controller to displayErrorAlert")
-       XCTAssertEqual(spyViewController.displayErrorAlertViewModel?.errorType, .internet, "the presenter should pass the response")
-   }
+    }
+    func testPresentLoadingView() {
+        // Given
+        // When
+        sut.presentLoadingView()
+        // Then
+        XCTAssertTrue(spyViewController.displayLoadingViewCalled, "presentLoadingView should ask the view controller to displayLoadingView")
+    }
+    func testHideLoadingView() {
+        // Given
+        // When
+        sut.hideLoadingView()
+        // Then
+        XCTAssertTrue(spyViewController.hideLoadingViewCalled, "hideLoadingView should ask the view controller to hideLoadingView")
+    }
+    func testPresentErrorAlert() {
+        // Given
+        let response = EmployeeDetail.Failure.Response(errorType: .internet)
+        // When
+        sut.presentErrorAlert(response: response)
+        // Then
+        XCTAssertTrue(spyViewController.displayErrorAlertCalled, "presentErrorAlert should ask the view controller to displayErrorAlert")
+        XCTAssertEqual(spyViewController.displayErrorAlertViewModel?.errorType, .internet, "the presenter should pass the response")
+    }
     func testPresentData() {
         // Given
         let data = EmployeeDetailModel.Datum(
