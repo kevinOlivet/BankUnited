@@ -16,7 +16,7 @@ protocol EmployeesListDisplayLogic: AnyObject {
     func showEmployeeDetail(viewModel: EmployeesList.EmployeeDetails.ViewModel)
 }
 
-class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic, UITableViewDataSource, UITableViewDelegate {
+class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic, CreateEmployeeDelegate, UITableViewDataSource, UITableViewDelegate {
 
     var interactor: EmployeesListBusinessLogic?
     var router: (NSObjectProtocol & EmployeesListRoutingLogic & EmployeesListDataPassing)?
@@ -128,6 +128,11 @@ class EmployeesListViewController: BaseViewController, EmployeesListDisplayLogic
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request = EmployeesList.EmployeeDetails.Request(indexPath: indexPath.row)
         interactor?.handleDidSelectRow(request: request)
+    }
+
+    // MARK: - CreateEmployeeDelegate
+    func reloadTheTable() {
+        fetchEmployeesList()
     }
 
     // MARK: - GettersSetters

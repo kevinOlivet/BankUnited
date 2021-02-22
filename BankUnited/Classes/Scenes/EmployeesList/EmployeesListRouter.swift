@@ -50,20 +50,21 @@ class EmployeesListRouter: NSObject, EmployeesListRoutingLogic, EmployeesListDat
 
     // MARK: Routing to CreateEmployee
     func routeToCreateNewEmployee() {
-//        let storyboard = UIStoryboard(
-//            name: "EmployeesMain",
-//            bundle: Utils.bundle(forClass: CreateEmployeeViewController.classForCoder())
-//        )
-//        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CreateEmployeeViewController") as! CreateEmployeeViewController
-//        var destinationDS = destinationVC.router!.dataStore!
-//
-//        passDataToCreateEmployee(source: dataStore!, destination: &destinationDS)
-//        navigateToCreateEmployee(source: viewController!, destination: destinationVC)
+        let storyboard = UIStoryboard(
+            name: "EmployeesMain",
+            bundle: Utils.bundle(forClass: CreateEmployeeViewController.classForCoder())
+        )
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CreateEmployeeViewController") as! CreateEmployeeViewController
+        destinationVC.createEmployeeDelegate = viewController
+        var destinationDS = destinationVC.router!.dataStore!
+
+        passDataToCreateEmployee(source: dataStore!, destination: &destinationDS)
+        navigateToCreateEmployee(source: viewController!, destination: destinationVC)
     }
-//    // MARK: Navigation to CreateEmployee
-//    func navigateToCreateEmployee(source: EmployeesListViewController, destination: CreateEmployeeViewController) {
-//      viewController?.navigationController?.show(destination, sender: nil)
-//    }
-//    // MARK: Passing data to CreateEmployee
-//    func passDataToCreateEmployee(source: EmployeesListDataStore, destination: inout CreateEmployeeDataStore) {}
+    // MARK: Navigation to CreateEmployee
+    func navigateToCreateEmployee(source: EmployeesListViewController, destination: CreateEmployeeViewController) {
+      viewController?.navigationController?.show(destination, sender: nil)
+    }
+    // MARK: Passing data to CreateEmployee
+    func passDataToCreateEmployee(source: EmployeesListDataStore, destination: inout CreateEmployeeDataStore) {}
 }

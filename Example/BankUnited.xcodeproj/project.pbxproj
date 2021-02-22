@@ -24,6 +24,14 @@
 		08DF9FDA25E0677D0029431A /* EmployeesListRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD225E0677D0029431A /* EmployeesListRoutingLogicSpy.swift */; };
 		08DF9FDB25E0677D0029431A /* EmployeesListBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD325E0677D0029431A /* EmployeesListBusinessLogicSpy.swift */; };
 		08DF9FDC25E0677D0029431A /* EmployeesListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DF9FD425E0677D0029431A /* EmployeesListPresenterTests.swift */; };
+		08E65A1825E1EDE100B3A5D1 /* CreateEmployeeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1025E1EDE100B3A5D1 /* CreateEmployeeViewControllerTests.swift */; };
+		08E65A1925E1EDE100B3A5D1 /* CreateEmployeeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1125E1EDE100B3A5D1 /* CreateEmployeeInteractorTests.swift */; };
+		08E65A1A25E1EDE100B3A5D1 /* CreateEmployeeDisplayLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1225E1EDE100B3A5D1 /* CreateEmployeeDisplayLogicSpy.swift */; };
+		08E65A1B25E1EDE100B3A5D1 /* CreateEmployeeWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1325E1EDE100B3A5D1 /* CreateEmployeeWorkerTests.swift */; };
+		08E65A1C25E1EDE100B3A5D1 /* CreateEmployeePresentationLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1425E1EDE100B3A5D1 /* CreateEmployeePresentationLogicSpy.swift */; };
+		08E65A1D25E1EDE100B3A5D1 /* CreateEmployeeRoutingLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1525E1EDE100B3A5D1 /* CreateEmployeeRoutingLogicSpy.swift */; };
+		08E65A1E25E1EDE100B3A5D1 /* CreateEmployeeBusinessLogicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1625E1EDE100B3A5D1 /* CreateEmployeeBusinessLogicSpy.swift */; };
+		08E65A1F25E1EDE200B3A5D1 /* CreateEmployeePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E65A1725E1EDE100B3A5D1 /* CreateEmployeePresenterTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -69,6 +77,14 @@
 		08DF9FD225E0677D0029431A /* EmployeesListRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListRoutingLogicSpy.swift; sourceTree = "<group>"; };
 		08DF9FD325E0677D0029431A /* EmployeesListBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListBusinessLogicSpy.swift; sourceTree = "<group>"; };
 		08DF9FD425E0677D0029431A /* EmployeesListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListPresenterTests.swift; sourceTree = "<group>"; };
+		08E65A1025E1EDE100B3A5D1 /* CreateEmployeeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeViewControllerTests.swift; sourceTree = "<group>"; };
+		08E65A1125E1EDE100B3A5D1 /* CreateEmployeeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeInteractorTests.swift; sourceTree = "<group>"; };
+		08E65A1225E1EDE100B3A5D1 /* CreateEmployeeDisplayLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeDisplayLogicSpy.swift; sourceTree = "<group>"; };
+		08E65A1325E1EDE100B3A5D1 /* CreateEmployeeWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeWorkerTests.swift; sourceTree = "<group>"; };
+		08E65A1425E1EDE100B3A5D1 /* CreateEmployeePresentationLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeePresentationLogicSpy.swift; sourceTree = "<group>"; };
+		08E65A1525E1EDE100B3A5D1 /* CreateEmployeeRoutingLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeRoutingLogicSpy.swift; sourceTree = "<group>"; };
+		08E65A1625E1EDE100B3A5D1 /* CreateEmployeeBusinessLogicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeBusinessLogicSpy.swift; sourceTree = "<group>"; };
+		08E65A1725E1EDE100B3A5D1 /* CreateEmployeePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeePresenterTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BankUnited_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankUnited_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +172,29 @@
 			path = Spies;
 			sourceTree = "<group>";
 		};
+		08E65A2225E1EDE800B3A5D1 /* CreateEmployee */ = {
+			isa = PBXGroup;
+			children = (
+				08E65A2725E1EDFB00B3A5D1 /* Spies */,
+				08E65A1025E1EDE100B3A5D1 /* CreateEmployeeViewControllerTests.swift */,
+				08E65A1125E1EDE100B3A5D1 /* CreateEmployeeInteractorTests.swift */,
+				08E65A1325E1EDE100B3A5D1 /* CreateEmployeeWorkerTests.swift */,
+				08E65A1725E1EDE100B3A5D1 /* CreateEmployeePresenterTests.swift */,
+			);
+			path = CreateEmployee;
+			sourceTree = "<group>";
+		};
+		08E65A2725E1EDFB00B3A5D1 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				08E65A1225E1EDE100B3A5D1 /* CreateEmployeeDisplayLogicSpy.swift */,
+				08E65A1425E1EDE100B3A5D1 /* CreateEmployeePresentationLogicSpy.swift */,
+				08E65A1525E1EDE100B3A5D1 /* CreateEmployeeRoutingLogicSpy.swift */,
+				08E65A1625E1EDE100B3A5D1 /* CreateEmployeeBusinessLogicSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +246,7 @@
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				08DF9FEC25E0678F0029431A /* EmployeesList */,
 				08CC118B25E178CD00670567 /* EmployeeDetail */,
+				08E65A2225E1EDE800B3A5D1 /* CreateEmployee */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -387,9 +427,12 @@
 				08CC118725E178B300670567 /* EmployeeDetailBusinessLogicSpy.swift in Sources */,
 				08DF9FD725E0677D0029431A /* EmployeesListDisplayLogicSpy.swift in Sources */,
 				8EA1176824436056008A80F6 /* BankUnitedLandingViewControllerTests.swift in Sources */,
+				08E65A1C25E1EDE100B3A5D1 /* CreateEmployeePresentationLogicSpy.swift in Sources */,
 				08CC118225E178B300670567 /* EmployeeDetailInteractorTests.swift in Sources */,
 				8EA1176424436056008A80F6 /* BankUnitedLandingPresentationLogicSpy.swift in Sources */,
 				8EA1176724436056008A80F6 /* BankUnitedLandingPresenterTests.swift in Sources */,
+				08E65A1D25E1EDE100B3A5D1 /* CreateEmployeeRoutingLogicSpy.swift in Sources */,
+				08E65A1825E1EDE100B3A5D1 /* CreateEmployeeViewControllerTests.swift in Sources */,
 				08DF9FD625E0677D0029431A /* EmployeesListInteractorTests.swift in Sources */,
 				8E10B3412443DE2D007EFC3C /* ReachabilitySpy.swift in Sources */,
 				8EA1176924436056008A80F6 /* BankUnitedLandingInteractorTests.swift in Sources */,
@@ -403,12 +446,17 @@
 				08CC118625E178B300670567 /* EmployeeDetailRoutingLogicSpy.swift in Sources */,
 				8EA1176324436056008A80F6 /* BankUnitedLandingBusinessLogicSpy.swift in Sources */,
 				8EA1176224436056008A80F6 /* BankUnitedLandingWorkerTests.swift in Sources */,
+				08E65A1B25E1EDE100B3A5D1 /* CreateEmployeeWorkerTests.swift in Sources */,
 				08DF9FDC25E0677D0029431A /* EmployeesListPresenterTests.swift in Sources */,
 				08CC118525E178B300670567 /* EmployeeDetailPresentationLogicSpy.swift in Sources */,
+				08E65A1E25E1EDE100B3A5D1 /* CreateEmployeeBusinessLogicSpy.swift in Sources */,
 				08CC118425E178B300670567 /* EmployeeDetailWorkerTests.swift in Sources */,
 				8EA1176624436056008A80F6 /* BankUnitedLandingRoutingLogicSpy.swift in Sources */,
+				08E65A1925E1EDE100B3A5D1 /* CreateEmployeeInteractorTests.swift in Sources */,
 				08CC118825E178B300670567 /* EmployeeDetailPresenterTests.swift in Sources */,
+				08E65A1A25E1EDE100B3A5D1 /* CreateEmployeeDisplayLogicSpy.swift in Sources */,
 				08DF9FD925E0677D0029431A /* EmployeesListPresentationLogicSpy.swift in Sources */,
+				08E65A1F25E1EDE200B3A5D1 /* CreateEmployeePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

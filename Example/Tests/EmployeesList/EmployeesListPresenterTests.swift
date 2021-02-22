@@ -97,11 +97,10 @@ class EmployeesListPresenterTests: XCTestCase {
     func testPresentEmployeesList() {
         // Given
         let data = EmployeesModel.Datum(
-            id: "testid",
-            employeeName: "testemployeeName",
-            employeeSalary: "testemployeeSalary",
-            employeeAge: "testemployeeAge",
-            profileImage: "testprofileImage"
+            id: 1233,
+            employeeSalary: 12,
+            employeeAge: 123,
+            employeeName: "testemployeeName"
         )
         let response = EmployeesList.Base.Response(employeesArray: [data])
         // When
@@ -111,9 +110,9 @@ class EmployeesListPresenterTests: XCTestCase {
         XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.nameTitle, "Name")
         XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.name, "testemployeeName")
         XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.salaryTitle, "Salary")
-        XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.salary, "$ testemployeeSalary")
+        XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.salary, "$ 12")
         XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.ageTitle, "Age")
-        XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.age, "testemployeeAge")
+        XCTAssertEqual(spyViewController.displayEmployeesArrayViewModel?.displayEmployeesArray.first?.age, "123")
     }
     func testPresentEmployeeDetail() {
         // Given

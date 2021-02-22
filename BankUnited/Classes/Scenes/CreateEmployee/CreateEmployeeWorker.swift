@@ -1,30 +1,37 @@
 //
-//  EmployeesListWorker.swift
-//  Pods
+//  CreateEmployeeWorker.swift
+//  BankUnited
 //
 //
 
 import BasicCommons
 
-class EmployeesListWorker {
+class CreateEmployeeWorker {
 
     var reachability: ReachabilityCheckingProtocol = Reachability()
     var repo: APIBankUnitedProtocol = APIBankUnited()
 
-    func getEmployeesList(
-        successCompletion: @escaping (EmployeesModel?) -> Void,
+    func postData(
+        name: String,
+        salary: String,
+        age: String,
+        successCompletion: @escaping (CreateEmployeeModel?) -> Void,
         failureCompletion: @escaping (NTError, Int?) -> Void
     ) {
         guard reachability.isConnectedToNetwork() else {
             failureCompletion(NTError.noInternetConection, nil)
             return
         }
-        repo.getEmployees(
-            success: { receivedEmployees, _ in
-                successCompletion(receivedEmployees)
+        
+        repo.postNewEmployee(
+            name: name,
+            salary: salary,
+            age: age,
+            success: { receivedData, _ in
+                successCompletion(receivedData)
             }) { error, statusCode in
                 failureCompletion(error, statusCode)
-            }
+        }
     }
 
 }

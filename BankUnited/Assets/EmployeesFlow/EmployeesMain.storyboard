@@ -82,7 +82,8 @@
                     <connections>
                         <outlet property="createEmployeeButton" destination="Fy3-QR-pnj" id="vb8-re-MRu"/>
                         <outlet property="tableView" destination="1B6-i5-dwM" id="Och-ZJ-UqS"/>
-                        <segue destination="c5a-ZP-gy9" kind="show" id="bLz-k9-qYO"/>
+                        <segue destination="c5a-ZP-gy9" kind="show" identifier="goToEmployeeDetail" id="bLz-k9-qYO"/>
+                        <segue destination="3q1-CV-cDw" kind="show" identifier="goToCreateEmployee" id="eKl-nH-ZQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdP-0H-OjS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,7 +184,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5q-5B-oc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2811.594202898551" y="112.5"/>
+            <point key="canvasLocation" x="2859" y="-183"/>
+        </scene>
+        <!--Create Employee View Controller-->
+        <scene sceneID="Hf6-uV-UaX">
+            <objects>
+                <viewController storyboardIdentifier="CreateEmployeeViewController" id="3q1-CV-cDw" customClass="CreateEmployeeViewController" customModule="BankUnited" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rsq-yR-a9Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DZ-gQ-HvP">
+                                <rect key="frame" x="20" y="128" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx5-CO-gVi">
+                                <rect key="frame" x="50" y="782" width="314" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YWR-nD-z5i"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDs-GB-riA">
+                                <rect key="frame" x="20" y="231" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3C-Mz-x6W">
+                                <rect key="frame" x="20" y="157" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3q1-CV-cDw" id="Hed-UM-cQ4"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTp-Gj-N8W">
+                                <rect key="frame" x="20" y="260" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3q1-CV-cDw" id="HdQ-6R-27E"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx7-qF-0RZ">
+                                <rect key="frame" x="20" y="363" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3q1-CV-cDw" id="ub7-a0-AGr"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L2-Op-meH">
+                                <rect key="frame" x="20" y="334" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GhC-Gk-DrE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="kx5-CO-gVi" secondAttribute="trailing" constant="50" id="1bv-G2-4xj"/>
+                            <constraint firstItem="7L2-Op-meH" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="5xk-ME-hee"/>
+                            <constraint firstItem="h3C-Mz-x6W" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="Fra-T9-qgC"/>
+                            <constraint firstItem="7L2-Op-meH" firstAttribute="top" secondItem="LTp-Gj-N8W" secondAttribute="bottom" constant="40" id="LPI-wd-HIp"/>
+                            <constraint firstItem="bx7-qF-0RZ" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="MpO-Mr-oo9"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="LTp-Gj-N8W" secondAttribute="trailing" constant="20" id="O50-8V-0Ef"/>
+                            <constraint firstItem="6DZ-gQ-HvP" firstAttribute="top" secondItem="GhC-Gk-DrE" secondAttribute="top" constant="40" id="Q4f-6i-Vw5"/>
+                            <constraint firstItem="bx7-qF-0RZ" firstAttribute="top" secondItem="7L2-Op-meH" secondAttribute="bottom" constant="8" symbolic="YES" id="RCU-1a-5qm"/>
+                            <constraint firstItem="LTp-Gj-N8W" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="XYw-Uk-MqC"/>
+                            <constraint firstItem="6DZ-gQ-HvP" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="arr-YW-0dP"/>
+                            <constraint firstItem="LTp-Gj-N8W" firstAttribute="top" secondItem="iDs-GB-riA" secondAttribute="bottom" constant="8" symbolic="YES" id="b74-pt-eBC"/>
+                            <constraint firstItem="kx5-CO-gVi" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="50" id="bks-pr-CkL"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="7L2-Op-meH" secondAttribute="trailing" constant="20" id="c5v-0y-yiS"/>
+                            <constraint firstItem="h3C-Mz-x6W" firstAttribute="top" secondItem="6DZ-gQ-HvP" secondAttribute="bottom" constant="8" symbolic="YES" id="ceO-5m-eI2"/>
+                            <constraint firstItem="iDs-GB-riA" firstAttribute="top" secondItem="h3C-Mz-x6W" secondAttribute="bottom" constant="40" id="dqE-le-Wda"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="iDs-GB-riA" secondAttribute="trailing" constant="20" id="lF8-h6-aDh"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="6DZ-gQ-HvP" secondAttribute="trailing" constant="20" id="lwT-Yp-vul"/>
+                            <constraint firstItem="iDs-GB-riA" firstAttribute="leading" secondItem="GhC-Gk-DrE" secondAttribute="leading" constant="20" id="p32-ti-toi"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="bottom" secondItem="kx5-CO-gVi" secondAttribute="bottom" constant="30" id="tDo-Uw-S2r"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="bx7-qF-0RZ" secondAttribute="trailing" constant="20" id="uVj-a3-ur3"/>
+                            <constraint firstItem="GhC-Gk-DrE" firstAttribute="trailing" secondItem="h3C-Mz-x6W" secondAttribute="trailing" constant="20" id="xCK-SR-N60"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ObE-l8-FGf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="23a-nN-MjO"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ageTextField" destination="bx7-qF-0RZ" id="MmP-Yg-UgZ"/>
+                        <outlet property="ageTitleLabel" destination="7L2-Op-meH" id="SOO-BZ-Gm0"/>
+                        <outlet property="nameTextField" destination="h3C-Mz-x6W" id="xDL-yB-nsc"/>
+                        <outlet property="nameTitleLabel" destination="6DZ-gQ-HvP" id="Raq-xd-Yrv"/>
+                        <outlet property="salaryTextField" destination="LTp-Gj-N8W" id="EAu-gT-bCN"/>
+                        <outlet property="salaryTitleLabel" destination="iDs-GB-riA" id="GJc-S7-rMW"/>
+                        <outlet property="submitEmployeeButton" destination="kx5-CO-gVi" id="ISa-zP-2Tq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nu5-Jr-bbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2858" y="477"/>
         </scene>
     </scenes>
     <resources>

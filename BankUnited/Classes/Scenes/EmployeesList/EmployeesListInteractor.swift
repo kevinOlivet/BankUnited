@@ -4,7 +4,7 @@
 //
 //
 
-import Foundation
+import BasicCommons
 
 protocol EmployeesListBusinessLogic {
     func prepareSetUpUI(request: EmployeesList.Texts.Request)
@@ -13,7 +13,7 @@ protocol EmployeesListBusinessLogic {
 }
 
 protocol EmployeesListDataStore {
-    var selectedEmployeeId: String! { get set }
+    var selectedEmployeeId: Int! { get set }
     var selectedEmployeeName: String! { get set }
 }
 
@@ -21,7 +21,7 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
     var presenter: EmployeesListPresentationLogic?
     var worker: EmployeesListWorker = EmployeesListWorker()
     var foundEmployees = [EmployeesModel.Datum]()
-    var selectedEmployeeId: String!
+    var selectedEmployeeId: Int!
     var selectedEmployeeName: String!
 
     // MARK: Methods
@@ -37,22 +37,28 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
     func fetchEmployeesList(request: EmployeesList.Base.Request) {
         presenter?.presentLoadingView()
 
-        worker.getEmployeesList(successCompletion: { [weak self] (receivedEmployees) in
-            self?.presenter?.hideLoadingView()
-            if let receivedEmployees = receivedEmployees {
-                self?.foundEmployees.removeAll()
-                self?.foundEmployees = receivedEmployees.data
-                let response = EmployeesList.Base.Response(employeesArray: receivedEmployees.data)
-                self?.presenter?.presentEmployeesList(response: response)
-            } else {
-                let response = EmployeesList.Failure.Response(errorType: .service)
-                self?.presenter?.presentErrorAlert(response: response)
-            }
+        worker.getEmployeesList(
+            successCompletion: { [weak self] (receivedEmployees) in
+                self?.presenter?.hideLoadingView()
+                if let receivedEmployees = receivedEmployees {
+                    self?.foundEmployees.removeAll()
+                    self?.foundEmployees = receivedEmployees.data
+                    let response = EmployeesList.Base.Response(employeesArray: receivedEmployees.data)
+                    self?.presenter?.presentEmployeesList(response: response)
+                } else {
+                    let response = EmployeesList.Failure.Response(errorType: .service)
+                    self?.presenter?.presentErrorAlert(response: response)
+                }
 
-        }) { (_) in
+            }) { (error, statusCode) in
             self.presenter?.hideLoadingView()
-            let response = EmployeesList.Failure.Response(errorType: .internet)
-            self.presenter?.presentErrorAlert(response: response)
+            if statusCode == ErrorCode.tooManyRequests.rawValue {
+                let response = EmployeesList.Failure.Response(errorType: .tooManyRequests)
+                self.presenter?.presentErrorAlert(response: response)
+            } else {
+                let response = EmployeesList.Failure.Response(errorType: .internet)
+                self.presenter?.presentErrorAlert(response: response)
+            }
         }
     }
 

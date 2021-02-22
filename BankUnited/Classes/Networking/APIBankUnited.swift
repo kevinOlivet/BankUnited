@@ -16,6 +16,11 @@ protocol APIBankUnitedProtocol {
                             success: @escaping (_ result: EmployeeDetailModel, Int) -> Void,
                             failure: @escaping (_ error: NTError, Int) -> Void)
 
+    func postNewEmployee(name: String,
+                         salary: String,
+                         age: String,
+                         success: @escaping (_ result: CreateEmployeeModel, Int) -> Void,
+                         failure: @escaping (_ error: NTError, Int) -> Void)
     
 }
 
@@ -73,11 +78,17 @@ class APIBankUnited: AuthenticatedAPI, APIBankUnitedProtocol {
 
         let url = Configuration.Api.createEmployee
 
+        let parameters: Parameters = [
+            "name": name,
+            "salary": salary,
+            "age": age
+        ]
+
         self.requestGeneric(
             type: CreateEmployeeModel.self,
             url: url,
             method: HTTPMethod.post,
-            parameters: nil,
+            parameters: parameters,
             encoding: JSONEncoding.default,
             validStatusCodes: [Int](200..<300),
             onSuccess: { createEmployeeModelResult, _, statusCode in

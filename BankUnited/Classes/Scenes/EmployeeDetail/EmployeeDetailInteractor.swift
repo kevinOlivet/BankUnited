@@ -4,7 +4,7 @@
 //
 //
 
-import Foundation
+import BasicCommons
 
 protocol EmployeeDetailBusinessLogic {
     func prepareSetUpUI(request: EmployeeDetail.Texts.Request)
@@ -12,7 +12,7 @@ protocol EmployeeDetailBusinessLogic {
 }
 
 protocol EmployeeDetailDataStore {
-    var selectedItemId: String! { get set }
+    var selectedItemId: Int! { get set }
     var selectedName: String! { get set }
 }
 
@@ -20,7 +20,7 @@ class EmployeeDetailInteractor: EmployeeDetailBusinessLogic, EmployeeDetailDataS
 
     var presenter: EmployeeDetailPresentationLogic?
     var worker: EmployeeDetailWorker = EmployeeDetailWorker()
-    var selectedItemId: String!
+    var selectedItemId: Int!
     var selectedName: String!
 
     // MARK: Methods
@@ -39,19 +39,20 @@ class EmployeeDetailInteractor: EmployeeDetailBusinessLogic, EmployeeDetailDataS
     func fetchData(request: EmployeeDetail.Base.Request) {
         presenter?.presentLoadingView()
 
-        worker.getData(selectedEmployeeId: selectedItemId,
-                       successCompletion: { [weak self] (receivedData) in
-            self?.presenter?.hideLoadingView()
-            if let receivedData = receivedData {
-                let response = EmployeeDetail.Base.Response(data: receivedData.data)
-                self?.presenter?.presentData(response: response)
-            } else {
-                let response = EmployeeDetail.Failure.Response(errorType: .service)
-                self?.presenter?.presentErrorAlert(response: response)
-            }
-        }) { (error, statusCode) in
+        worker.getData(
+            selectedEmployeeId: String(selectedItemId),
+            successCompletion: { [weak self] (receivedData) in
+                self?.presenter?.hideLoadingView()
+                if let receivedData = receivedData {
+                    let response = EmployeeDetail.Base.Response(data: receivedData.data)
+                    self?.presenter?.presentData(response: response)
+                } else {
+                    let response = EmployeeDetail.Failure.Response(errorType: .service)
+                    self?.presenter?.presentErrorAlert(response: response)
+                }
+            }) { (error, statusCode) in
             self.presenter?.hideLoadingView()
-            if statusCode == 429 {
+            if statusCode == ErrorCode.tooManyRequests.rawValue {
                 let response = EmployeeDetail.Failure.Response(errorType: .tooManyRequests)
                 self.presenter?.presentErrorAlert(response: response)
             } else {

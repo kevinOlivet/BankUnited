@@ -1,5 +1,5 @@
 //
-//  EmployeeDetailPresenterTests.swift
+//  CreateEmployeePresenterTests.swift
 //  BankUnited
 //
 //
@@ -7,48 +7,42 @@
 @testable import BankUnited
 import XCTest
 
-class EmployeeDetailPresenterTests: XCTestCase {
-
+class CreateEmployeePresenterTests: XCTestCase {
+    
     // MARK: Subject under test
-    var sut: EmployeeDetailPresenter!
-    var spyViewController: EmployeeDetailDisplayLogicSpy!
-
+    var sut: CreateEmployeePresenter!
+    var spyViewController: CreateEmployeeDisplayLogicSpy!
+    
     // MARK: Test lifecycle
     override  func setUp() {
         super.setUp()
-        setupEmployeeDetailPresenter()
+        setupCreateEmployeePresenter()
     }
     override  func tearDown() {
         spyViewController = nil
         sut = nil
         super.tearDown()
     }
-
+    
     // MARK: Test setup
-    func setupEmployeeDetailPresenter() {
-        sut = EmployeeDetailPresenter()
-
-        spyViewController = EmployeeDetailDisplayLogicSpy()
+    func setupCreateEmployeePresenter() {
+        sut = CreateEmployeePresenter()
+        
+        spyViewController = CreateEmployeeDisplayLogicSpy()
         sut.viewController = spyViewController
     }
-
+    
     // MARK: Tests
-
     func testPresentSetupUI() {
         // Given
-        let response = EmployeeDetail.Texts.Response(
-            title: "testTitle",
-            nameTitle: "testnameTitle",
-            salaryTitle: "testsalaryTitle",
-            ageTitle: "testageTitle",
-            buttonTitle: "testbuttonTitle"
-        )
+        let response = CreateEmployee.Texts.Response(title: "testTitle", nameTitle: "testNameTitle", salaryTitle: "testSalaryTitle", ageTitle: "testAgeTitle", buttonTitle: "testButtonTitle")
         // When
         sut.presentSetupUI(response: response)
         // Then
         XCTAssertTrue(spyViewController.displaySetupUICalled,"presentSetupUI should ask the view controller to display the result")
         XCTAssertEqual(spyViewController.displaySetupUIViewModel?.title,"testTitle")
-        XCTAssertEqual(spyViewController.displaySetupUIViewModel?.buttonTitle, "testbuttonTitle")
+        XCTAssertEqual(spyViewController.displaySetupUIViewModel?.nameTitle,"testNameTitle")
+        XCTAssertEqual(spyViewController.displaySetupUIViewModel?.buttonTitle, "testButtonTitle")
     }
     func testPresentLoadingView() {
         // Given
@@ -66,27 +60,31 @@ class EmployeeDetailPresenterTests: XCTestCase {
     }
     func testPresentErrorAlert() {
         // Given
-        let response = EmployeeDetail.Failure.Response(errorType: .internet)
+        let response = CreateEmployee.Failure.Response(errorType: .internet)
         // When
         sut.presentErrorAlert(response: response)
         // Then
         XCTAssertTrue(spyViewController.displayErrorAlertCalled, "presentErrorAlert should ask the view controller to displayErrorAlert")
         XCTAssertEqual(spyViewController.displayErrorAlertViewModel?.errorType, .internet, "the presenter should pass the response")
     }
+    func testPresentButtonState() {
+        // Given
+        let response = CreateEmployee.EvaluateState.Response(activateButton: true)
+        // When
+        sut.presentButtonState(response: response)
+        // Then
+        XCTAssertTrue(spyViewController.displayButtonStateCalled)
+        XCTAssertEqual(spyViewController.displayButtonStateViewModel?.activateButton, true)
+    }
     func testPresentData() {
         // Given
-        let data = EmployeeDetailModel.Datum(
-            id: 12,
-            employeeSalary: 1234,
-            employeeAge: 123,
-            employeeName: "testemployeeName"
-        )
-        let response = EmployeeDetail.Base.Response(data: data)
+        let data = CreateEmployeeModel.Datum(name: "testname", salary: "1234", age: "12", id: 1)
+        let response = CreateEmployee.Base.Response(data: data, name: "testName", salary: "1234", age: "12", id: 123)
         // When
         sut.presentData(response: response)
         // Then
         XCTAssertTrue(spyViewController.displayDataCalled)
-        XCTAssertEqual(spyViewController.displayDataViewModel?.name, "testemployeeName")
+        XCTAssertEqual(spyViewController.displayDataViewModel?.title, "Success!! Added testName")
     }
-
+    
 }

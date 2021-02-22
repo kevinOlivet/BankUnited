@@ -1,28 +1,31 @@
 # BankUnited
 
-[![CI Status](https://img.shields.io/travis/Kevin Olivet/BankUnited.svg?style=flat)](https://travis-ci.org/Kevin Olivet/BankUnited)
-[![Version](https://img.shields.io/cocoapods/v/BankUnited.svg?style=flat)](https://cocoapods.org/pods/BankUnited)
-[![License](https://img.shields.io/cocoapods/l/BankUnited.svg?style=flat)](https://cocoapods.org/pods/BankUnited)
-[![Platform](https://img.shields.io/cocoapods/p/BankUnited.svg?style=flat)](https://cocoapods.org/pods/BankUnited)
+This pod holds the BankUnited code for use with BasicMainApp.
+There are 3 environments:
+DEV - Uses OHTTPStubs and json files to supply false data
+QA - Connects to a free dummy backend.  Fails often due to 429 too many requests error.
+PROD - Same as QA
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+Xcode 12.0
+Swift 5
 
 ## Installation
 
 BankUnited is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your Podfile, note that BankUnited has a dependency on BasicCommons and BasicUIElements:
 
-```ruby
-pod 'BankUnited'
-```
+pod 'BankUnited', :git => 'https://github.com/kevinOlivet/BankUnited.git', :branch => 'develop'
+pod 'BasicCommons', :git => 'git@github.com:kevinOlivet/BasicCommons.git', :branch => 'develop'
+pod 'BasicUIElements', :git => 'git@github.com:kevinOlivet/BasicUIElements.git', :branch => 'develop'
 
 ## Author
 
-Kevin Olivet, jolivet@transbank.cl
+Kevin Olivet, japanart1234@yahoo.com
 
 ## License
 

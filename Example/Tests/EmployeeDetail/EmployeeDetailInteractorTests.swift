@@ -30,7 +30,7 @@ class EmployeeDetailInteractorTests: XCTestCase {
     // MARK: Test setup
     func setupEmployeeDetailInteractor() {
         sut = EmployeeDetailInteractor()
-        sut.selectedItemId = "1"
+        sut.selectedItemId = 1
         sut.selectedName = "Jon Olivet"
 
         spyPresenter = EmployeeDetailPresentationLogicSpy()
@@ -62,12 +62,11 @@ class EmployeeDetailInteractorTests: XCTestCase {
             case .success:
                 let data = EmployeeDetailModel.Datum(
                     id: 12,
-                    employeeName: "testemployeeName",
-                    employeeSalary: 123,
-                    employeeAge: 1234,
-                    profileImage: "testprofileImage"
+                    employeeSalary: 1234,
+                    employeeAge: 123,
+                    employeeName: "testemployeeName"
                 )
-                let model = EmployeeDetailModel(status: "success", data: data, message: "testMessage")
+                let model = EmployeeDetailModel(status: "success", data: data)
                 successCompletion(model)
             case .parsingFail:
                 successCompletion(nil)

@@ -43,9 +43,9 @@ class EmployeesListPresenter: EmployeesListPresentationLogic {
                 nameTitle: "NAME".localized,
                 name: employee.employeeName,
                 salaryTitle: "SALARY".localized,
-                salary: "CURRENCY_SIGN".localized + employee.employeeSalary,
+                salary: "CURRENCY_SIGN".localized + String(employee.employeeSalary),
                 ageTitle: "AGE".localized,
-                age: employee.employeeAge
+                age: String(employee.employeeAge)
             )
             employeeArray.append(viewModel)
         }

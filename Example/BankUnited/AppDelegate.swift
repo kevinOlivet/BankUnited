@@ -5,6 +5,7 @@
 //  Copyright (c) Jon Olivet. All rights reserved.
 //
 
+import AlamofireNetworkActivityLogger
 import BankUnited
 import UIKit
 
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         BankUnitedStubs().enableStubs()
         #endif
+        
+        NetworkActivityLogger.shared.level = .debug
+        NetworkActivityLogger.shared.startLogging()
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

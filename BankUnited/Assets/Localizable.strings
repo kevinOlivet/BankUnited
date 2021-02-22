@@ -16,6 +16,7 @@ FINISHED = "Finished";
 OK = "OK";
 
 // MARK: - EmployeesList
+EMPLOYEES = "Employees";
 NAME = "Name";
 SALARY = "Salary";
 CURRENCY_SIGN = "$ ";
@@ -24,3 +25,10 @@ CREATE_NEW_EMPLOYEEE = "Create New Employee";
 
 // MARK: - EmployeeDetail
 GO_BACK = "Go Back";
+
+// MARK: - CreateEmployee
+NEW = "New";
+SUBMIT = "Submit";
+SUCCESS = "Success!! ";
+ADDED = "Added ";
+ID = "Id";

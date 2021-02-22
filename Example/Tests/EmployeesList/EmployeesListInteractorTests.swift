@@ -33,11 +33,10 @@ class EmployeesListInteractorTests: XCTestCase {
     func setupEmployeesListInteractor() {
         sut = EmployeesListInteractor()
         let item = EmployeesModel.Datum(
-            id: "1",
-            employeeName: "testemployeeName",
-            employeeSalary: "123",
-            employeeAge: "12",
-            profileImage: "testprofileImage"
+            id: 1,
+            employeeSalary: 12,
+            employeeAge: 123,
+            employeeName: "testemployeeName"
         )
         sut.foundEmployees = [item]
             
@@ -59,16 +58,15 @@ class EmployeesListInteractorTests: XCTestCase {
         var theResult: PossibleResults = .success
         override func getEmployeesList(
             successCompletion: @escaping (EmployeesModel?) -> Void,
-            failureCompletion: @escaping (NTError) -> Void
+            failureCompletion: @escaping (NTError, Int?) -> Void
         ) {
             switch theResult {
             case .success:
                 let data = EmployeesModel.Datum(
-                    id: "testid",
-                    employeeName: "testemployeeName",
-                    employeeSalary: "testemployeeSalary",
-                    employeeAge: "testemployeeAge",
-                    profileImage: "testprofileImage"
+                    id: 1234,
+                    employeeSalary: 123,
+                    employeeAge: 12,
+                    employeeName: "testemployeeName"
                 )
                 let model = EmployeesModel(status: "success", data: [data])
                 successCompletion(model)
@@ -76,7 +74,7 @@ class EmployeesListInteractorTests: XCTestCase {
                 successCompletion(nil)
             case .failure:
                 let error = NTError.noInternetConection
-                failureCompletion(error)
+                failureCompletion(error, nil)
             }
         }
     }
@@ -143,7 +141,7 @@ class EmployeesListInteractorTests: XCTestCase {
     }
     func testHandleDidSelectRow() {
         // Given
-        sut.selectedEmployeeId = "1"
+        sut.selectedEmployeeId = 1
         let request = EmployeesList.EmployeeDetails.Request(indexPath: 0)
         // When
         sut.handleDidSelectRow(request: request)

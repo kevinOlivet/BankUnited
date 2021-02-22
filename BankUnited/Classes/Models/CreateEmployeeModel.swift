@@ -9,10 +9,10 @@ import Foundation
 // MARK: - CreateEmployeeModel
 struct CreateEmployeeModel: Codable {
     let status: String
-    let data: DataClass
+    let data: Datum
 
-    // MARK: - DataClass
-    struct DataClass: Codable {
+    // MARK: - Datum
+    struct Datum: Codable {
         let name, salary, age: String
         let id: Int
     }

@@ -16,7 +16,7 @@ class EmployeeDetailWorker {
         successCompletion: @escaping (EmployeeDetailModel?) -> Void,
         failureCompletion: @escaping (NTError, Int?) -> Void
     ) {
-        guard reachability.isConnectedToNetwork() == true else {
+        guard reachability.isConnectedToNetwork() else {
             failureCompletion(NTError.noInternetConection, nil)
             return
         }
