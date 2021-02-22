@@ -13,7 +13,7 @@ struct EmployeesModel: Codable {
 
     // MARK: - Datum
     struct Datum: Codable {
-        let id, employeeSalary, employeeAge: Int
+        let id, employeeSalary, employeeAge: String
         let employeeName: String
 
         enum CodingKeys: String, CodingKey {
@@ -23,4 +23,6 @@ struct EmployeesModel: Codable {
             case employeeAge = "employee_age"
         }
     }
+
+
 }

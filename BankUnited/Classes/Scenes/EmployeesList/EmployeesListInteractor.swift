@@ -13,7 +13,7 @@ protocol EmployeesListBusinessLogic {
 }
 
 protocol EmployeesListDataStore {
-    var selectedEmployeeId: Int! { get set }
+    var selectedEmployeeId: String! { get set }
     var selectedEmployeeName: String! { get set }
 }
 
@@ -21,7 +21,7 @@ class EmployeesListInteractor: EmployeesListBusinessLogic, EmployeesListDataStor
     var presenter: EmployeesListPresentationLogic?
     var worker: EmployeesListWorker = EmployeesListWorker()
     var foundEmployees = [EmployeesModel.Datum]()
-    var selectedEmployeeId: Int!
+    var selectedEmployeeId: String!
     var selectedEmployeeName: String!
 
     // MARK: Methods

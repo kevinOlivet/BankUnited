@@ -27,11 +27,11 @@ class CreateEmployeeViewController: BaseViewController, CreateEmployeeDisplayLog
     weak var createEmployeeDelegate: CreateEmployeeDelegate?
 
     @IBOutlet private weak var nameTitleLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var salaryTitleLabel: UILabel!
-    @IBOutlet weak var salaryTextField: UITextField!
+    @IBOutlet private weak var salaryTextField: UITextField!
     @IBOutlet private weak var ageTitleLabel: UILabel!
-    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet private weak var ageTextField: UITextField!
     @IBOutlet private weak var submitEmployeeButton: UIButton!
     
     // MARK: Object lifecycle

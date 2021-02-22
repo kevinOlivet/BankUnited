@@ -30,7 +30,7 @@ class EmployeeDetailInteractorTests: XCTestCase {
     // MARK: Test setup
     func setupEmployeeDetailInteractor() {
         sut = EmployeeDetailInteractor()
-        sut.selectedItemId = 1
+        sut.selectedItemId = "1"
         sut.selectedName = "Jon Olivet"
 
         spyPresenter = EmployeeDetailPresentationLogicSpy()

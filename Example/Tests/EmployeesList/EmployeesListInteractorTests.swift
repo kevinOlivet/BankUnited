@@ -33,9 +33,9 @@ class EmployeesListInteractorTests: XCTestCase {
     func setupEmployeesListInteractor() {
         sut = EmployeesListInteractor()
         let item = EmployeesModel.Datum(
-            id: 1,
-            employeeSalary: 12,
-            employeeAge: 123,
+            id: "1",
+            employeeSalary: "12",
+            employeeAge: "123",
             employeeName: "testemployeeName"
         )
         sut.foundEmployees = [item]
@@ -63,9 +63,9 @@ class EmployeesListInteractorTests: XCTestCase {
             switch theResult {
             case .success:
                 let data = EmployeesModel.Datum(
-                    id: 1234,
-                    employeeSalary: 123,
-                    employeeAge: 12,
+                    id: "1234",
+                    employeeSalary: "123",
+                    employeeAge: "12",
                     employeeName: "testemployeeName"
                 )
                 let model = EmployeesModel(status: "success", data: [data])
@@ -141,7 +141,7 @@ class EmployeesListInteractorTests: XCTestCase {
     }
     func testHandleDidSelectRow() {
         // Given
-        sut.selectedEmployeeId = 1
+        sut.selectedEmployeeId = "1"
         let request = EmployeesList.EmployeeDetails.Request(indexPath: 0)
         // When
         sut.handleDidSelectRow(request: request)

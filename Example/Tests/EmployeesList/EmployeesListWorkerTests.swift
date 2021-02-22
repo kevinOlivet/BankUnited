@@ -57,17 +57,17 @@ class EmployeesListWorkerTests: XCTestCase {
             )
             XCTAssertEqual(
                 employeesResult?.data.first?.id,
-                1,
+                "1",
                 "should match the JSON file"
             )
             XCTAssertEqual(
                 employeesResult?.data.first?.employeeAge,
-                61,
+                "61",
                 "should match the JSON file"
             )
             XCTAssertEqual(
                 employeesResult?.data.first?.employeeSalary,
-                320800,
+                "320800",
                 "should match the JSON file"
             )
             expectation.fulfill()

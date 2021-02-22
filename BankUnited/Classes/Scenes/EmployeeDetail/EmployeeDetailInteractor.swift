@@ -12,7 +12,7 @@ protocol EmployeeDetailBusinessLogic {
 }
 
 protocol EmployeeDetailDataStore {
-    var selectedItemId: Int! { get set }
+    var selectedItemId: String! { get set }
     var selectedName: String! { get set }
 }
 
@@ -20,7 +20,7 @@ class EmployeeDetailInteractor: EmployeeDetailBusinessLogic, EmployeeDetailDataS
 
     var presenter: EmployeeDetailPresentationLogic?
     var worker: EmployeeDetailWorker = EmployeeDetailWorker()
-    var selectedItemId: Int!
+    var selectedItemId: String!
     var selectedName: String!
 
     // MARK: Methods

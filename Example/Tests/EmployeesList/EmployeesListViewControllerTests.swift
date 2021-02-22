@@ -189,4 +189,11 @@ class EmployeesListViewControllerTests: XCTestCase {
             "should equal the name passed to the cell"
         )
     }
+    func testReloadTheTable() {
+        // Given
+        // When
+        sut.reloadTheTable()
+        // Then
+        XCTAssertTrue(spyInteractor.fetchEmployeesListCalled)
+    }
 }

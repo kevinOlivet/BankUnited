@@ -97,9 +97,9 @@ class EmployeesListPresenterTests: XCTestCase {
     func testPresentEmployeesList() {
         // Given
         let data = EmployeesModel.Datum(
-            id: 1233,
-            employeeSalary: 12,
-            employeeAge: 123,
+            id: "1233",
+            employeeSalary: "12",
+            employeeAge: "123",
             employeeName: "testemployeeName"
         )
         let response = EmployeesList.Base.Response(employeesArray: [data])
