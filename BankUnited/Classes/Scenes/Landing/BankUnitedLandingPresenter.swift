@@ -18,7 +18,7 @@ class BankUnitedLandingPresenter: BankUnitedLandingPresentationLogic {
 
     func presentSetupUI(response: BankUnitedLanding.Basic.Response) {
         let viewModel = BankUnitedLanding.Basic.ViewModel(
-            title: response.title.localized,
+            title: response.title.localized(in: .BankUnited),
             subtitle: response.subtitle.localized
         )
         viewController?.displaySetupUI(viewModel: viewModel)
