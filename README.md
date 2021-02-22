@@ -19,9 +19,13 @@ Swift 5
 BankUnited is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile, note that BankUnited has a dependency on BasicCommons and BasicUIElements:
 
+
 pod 'BankUnited', :git => 'https://github.com/kevinOlivet/BankUnited.git', :branch => 'develop'
+
 pod 'BasicCommons', :git => 'git@github.com:kevinOlivet/BasicCommons.git', :branch => 'develop'
+
 pod 'BasicUIElements', :git => 'git@github.com:kevinOlivet/BasicUIElements.git', :branch => 'develop'
+
 
 ## Author
 
