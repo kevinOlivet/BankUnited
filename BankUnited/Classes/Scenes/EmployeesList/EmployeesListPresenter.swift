@@ -21,7 +21,7 @@ class EmployeesListPresenter: EmployeesListPresentationLogic {
     // MARK: Methods
     func presentSetupUI(response: EmployeesList.Texts.Response) {
         let viewModel = EmployeesList.Texts.ViewModel(
-            title: response.title.localized,
+            title: response.title.localized(in: .BankUnited),
             buttonTitle: response.buttonTitle.localized
         )
         viewController?.displaySetupUI(viewModel: viewModel)
